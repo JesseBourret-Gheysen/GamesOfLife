@@ -58,7 +58,9 @@ func _input(event):
 	if event.is_action_pressed("toggle_play"):
 		playing = !playing
 	if event.is_action_pressed("click"):
+		print("clicking in the cellTileMapFile")
 		var pos = (get_local_mouse_position()/TILE_SIZE).floor()
+		print(pos)
 		set_cellv(pos, 1-get_cellv(pos))
 	if event.is_action_pressed("Zoom_Out"):
 		print("zoom in")
@@ -85,6 +87,7 @@ func update_field():
 	if !playing:
 		return
 	
+	print("we are playing - in update_field()")
 	#adjust state in temp_field
 	for x in range(width):
 		for y in range(height):

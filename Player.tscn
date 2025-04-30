@@ -26,5 +26,6 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "PlayerAni"
+frame = 1
 playing = true
 offset = Vector2( 8, 8 )

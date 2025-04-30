@@ -1,9 +1,9 @@
 extends Control
 
-export (int)var horizontal_size setget _on_HorizontalSize_value_changed
-export (int)var vertical_size setget _on_VerticalSize_value_changed
-export (int)var evolution_speed setget _on_EvolutionSpeed_value_changed
-export (int)var scope setget _on_Scope_value_changed
+export (int)var horizontal_size = 80 setget _on_HorizontalSize_value_changed
+export (int)var vertical_size = 80 setget _on_VerticalSize_value_changed
+export (int)var evolution_speed = 10 setget _on_EvolutionSpeed_value_changed
+export (int)var scope = 2 setget _on_Scope_value_changed
 
 export(Array, int) var neighboor_life_array = []
 export(Array, int) var neighboor_death_array = []
@@ -40,7 +40,7 @@ onready var video_player: VideoPlayer = $VideoPlayer
 
 func _on_HorizontalSize_value_changed(value):
 	horizontal_size = int(value)
-	horizontal_label.text = "Horizontal Size : " + str(horizontal_size)
+#	horizontal_label.text = "Horizontal Size : " + str(horizontal_size)
 
 
 func _on_VerticalSize_value_changed(value):
@@ -51,11 +51,13 @@ func _on_VerticalSize_value_changed(value):
 
 func _on_EvolutionSpeed_value_changed(value):
 	evolution_speed = int(value)
+	print(value)
 #	speed_label.text = "Evolution Speed : " + str(evolution_speed)
 
 
 func _on_Scope_value_changed(value):
 	scope = int(value)
+	print(value)
 #	scope_label.text = "Scope : " + str(scope)
 
 
@@ -69,11 +71,7 @@ func save_menu_selections(length: int, width: int, speed: int, scope: int):
 		# Map, Algorithm, Speed
 	make_neighboor_array()
 	var config = ConfigFile.new()
-	print("We are bou'ta save deez")
-	print(length)
-	print(width)
-	print(speed)
-	print(scope)
+
 	config.set_value("Map", "length", length)
 	config.set_value("Map", "width", width)
 	config.set_value("Algorithm", "scope", scope)
