@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="GamesOfLife"
 config/description="Based on the imfamous \"Conway's Game of Life\" made by John Horton Conway in 1970. The original game of life had a cell scope of 1, and made a turing complete set of cellular atomata. This game allows you to change the algorithm and create different versions of the game of life. Formally, it allows users to explore the isotropic rule space that exists on the grid of squres."
-run/main_scene="res://Menu/Main.tscn"
+run/main_scene="res://Menu/MainMenu.tscn"
 
 [display]
 
