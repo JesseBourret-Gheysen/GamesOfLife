@@ -19,25 +19,9 @@ onready var cam: Camera2D = $"../ZoomingCamera2D"
 var temp_field 
 
 func _ready():
-	print("were a boota load deez")
-	print(width)
-	print(height)
-	print(speed)
-	print(scope)
-	
 	load_settings()
-#	var varlist = load_settings()
-#	print("hold up print list now")
-#	print(varlist)
-#	print("--------------------")
-#	print("now thery loadeed")
-	
-	print(width)
-	print(height)
-	print(speed)
-	print(scope)
-	scope_list = scope_to_coord()
 
+	scope_list = scope_to_coord()
 	
 	var width_px = width * TILE_SIZE
 	var height_px = height * TILE_SIZE
@@ -49,7 +33,7 @@ func _ready():
 	for x in range(width):
 		var temp = []
 		for y in range(height):
-			set_cell(x,y,0)
+			set_cell(x,y,2)
 			temp.append(0)
 		temp_field.append(temp)
 
@@ -113,6 +97,7 @@ func update_field():
 	for x in range(width):
 		for y in range(height):
 			set_cell(x, y, temp_field[x][y])
+#			set_cell(x, y, 2)
 
 
 func scope_to_coord():
@@ -143,4 +128,4 @@ func load_settings():
 func clear_field():
 	for x in range(width):
 		for y in range(height):
-			set_cell(x, y, 0)
+			set_cell(x, y, 2)
